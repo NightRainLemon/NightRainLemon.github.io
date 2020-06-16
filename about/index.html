@@ -557,10 +557,12 @@
     
       <script type="text/javascript">
       function renderGitment(){
-        var gitment = new Gitment({
+        var gitment = new Gitmint({
             id: window.location.pathname, 
             owner: 'NightRainLemon',
             repo: 'NightRainLemon.github.io',
+            
+            lang: "zh-Hans" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
             
             oauth: {
             
