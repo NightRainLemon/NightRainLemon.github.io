@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="重载（overload）什么是重载呢？StringBuilder messages &#x3D; new StringBuilder();StringBuilder todoList &#x3D; new StringBuilder(&quot;To do:\n&quot;)上面的例子就是重载，也就是说如果有多个方法，这些方法的名字相同、却又不同的参数，这边就产生了重载。 重载需满足的特点 被重载的方法必须改变参数列">
+<meta name="description" content="重载（overload）什么是重载呢？StringBuilder messages &#x3D; new StringBuilder();StringBuilder todoList &#x3D; new StringBuilder(&quot;To do:\n&quot;)上面的例子就是重载，也就是说如果有多个方法，这些方法的名字相同、却又不同的参数，这边就产生了重载。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java的重载和重写">
 <meta property="og:url" content="https://nightrainlemon.github.io.git/2020/06/17/Java%E7%9A%84%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E5%86%99/index.html">
 <meta property="og:site_name" content="夜雨柠檬的博客">
-<meta property="og:description" content="重载（overload）什么是重载呢？StringBuilder messages &#x3D; new StringBuilder();StringBuilder todoList &#x3D; new StringBuilder(&quot;To do:\n&quot;)上面的例子就是重载，也就是说如果有多个方法，这些方法的名字相同、却又不同的参数，这边就产生了重载。 重载需满足的特点 被重载的方法必须改变参数列">
+<meta property="og:description" content="重载（overload）什么是重载呢？StringBuilder messages &#x3D; new StringBuilder();StringBuilder todoList &#x3D; new StringBuilder(&quot;To do:\n&quot;)上面的例子就是重载，也就是说如果有多个方法，这些方法的名字相同、却又不同的参数，这边就产生了重载。">
 <meta property="article:published_time" content="2020-06-17T03:41:23.701Z">
-<meta property="article:modified_time" content="2020-06-17T04:16:11.061Z">
+<meta property="article:modified_time" content="2020-06-17T04:30:26.117Z">
 <meta property="article:author" content="NightRainLemon">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
@@ -300,6 +300,7 @@
 
       
         <h4 id="重载（overload）"><a href="#重载（overload）" class="headerlink" title="重载（overload）"></a>重载（overload）</h4><h5 id="什么是重载呢？"><a href="#什么是重载呢？" class="headerlink" title="什么是重载呢？"></a>什么是重载呢？</h5><p><code>StringBuilder messages = new StringBuilder();</code><br><code>StringBuilder todoList = new StringBuilder(&quot;To do:\n&quot;)</code><br>上面的例子就是重载，也就是说如果有多个方法，这些方法的名字相同、却又不同的参数，这边就产生了重载。</p>
+<a id="more"></a>
 <h5 id="重载需满足的特点"><a href="#重载需满足的特点" class="headerlink" title="重载需满足的特点"></a>重载需满足的特点</h5><ol>
 <li>被重载的方法必须改变参数列表，</li>
 <li>被重载的方法可以改变返回类型，</li>
@@ -322,7 +323,7 @@
 </li>
 <li>子类和父类在同一个包中，那么子类可以重写父类的所有方法，除了声明为private和final的方法，</li>
 <li>子类和父类不在同一个包中，那么子类只能重写父类声明为public和protected的非final方法，</li>
-<li>重写的方法能够抛出非强制异常，无论子类能够重写父类是否抛出异常。但是，重写的方法不能抛出新的强制性异常，或者被重写方法声明的更广泛的强制性异常，反之则可以，</li>
+<li>重写的方法能够抛出非强制异常，无论子类能够重写父类是否抛出异常。但是，重写的方法不能抛出新的强制性异常，或者被重写方法声明的更广泛的强制性异常，反之则可以，(这段话没有理解，先放一下)</li>
 <li>构造方法不能被重写，</li>
 <li>如果不能继承一个方法，则不能重写这个方法。</li>
 </ol>
@@ -473,7 +474,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

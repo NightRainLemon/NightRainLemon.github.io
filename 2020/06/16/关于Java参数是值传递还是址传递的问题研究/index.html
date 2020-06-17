@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="结论Java中所有参数都是值传递。既然是值传递，那么它就是一份拷贝（址传递才是原件），拷贝件的改变不会影响原件。 实验创建了一个User类，类成员name，类方法testParameterTransfer，初始name为夜雨柠檬，调用testParameterTransfer方法，将user对象传入，改变name的值为NightRainLemon，请分析结果， 代码：123456789101112">
+<meta name="description" content="结论Java中所有参数都是值传递。既然是值传递，那么它就是一份拷贝（址传递才是原件），拷贝件的改变不会影响原件。 实验">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于Java参数是值传递还是址传递的问题研究">
 <meta property="og:url" content="https://nightrainlemon.github.io.git/2020/06/16/%E5%85%B3%E4%BA%8EJava%E5%8F%82%E6%95%B0%E6%98%AF%E5%80%BC%E4%BC%A0%E9%80%92%E8%BF%98%E6%98%AF%E5%9D%80%E4%BC%A0%E9%80%92%E7%9A%84%E9%97%AE%E9%A2%98%E7%A0%94%E7%A9%B6/index.html">
 <meta property="og:site_name" content="夜雨柠檬的博客">
-<meta property="og:description" content="结论Java中所有参数都是值传递。既然是值传递，那么它就是一份拷贝（址传递才是原件），拷贝件的改变不会影响原件。 实验创建了一个User类，类成员name，类方法testParameterTransfer，初始name为夜雨柠檬，调用testParameterTransfer方法，将user对象传入，改变name的值为NightRainLemon，请分析结果， 代码：123456789101112">
+<meta property="og:description" content="结论Java中所有参数都是值传递。既然是值传递，那么它就是一份拷贝（址传递才是原件），拷贝件的改变不会影响原件。 实验">
 <meta property="og:image" content="https://nightrainlemon.github.io.git/images/User%E5%86%85%E5%AD%98%E5%9B%BE%E8%A7%A3_10.32.png">
 <meta property="article:published_time" content="2020-06-16T00:06:38.610Z">
-<meta property="article:modified_time" content="2020-06-16T03:58:11.297Z">
+<meta property="article:modified_time" content="2020-06-17T04:31:37.828Z">
 <meta property="article:author" content="NightRainLemon">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
@@ -302,7 +302,8 @@
 
       
         <h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>Java中所有参数都是值传递。<br>既然是值传递，那么它就是一份拷贝（址传递才是原件），拷贝件的改变不会影响原件。</p>
-<h4 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h4><p>创建了一个User类，类成员name，类方法testParameterTransfer，初始name为<code>夜雨柠檬</code>，调用testParameterTransfer方法，将user对象传入，改变name的值为<code>NightRainLemon</code>，请分析结果，</p>
+<h4 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h4><a id="more"></a>
+<p>创建了一个User类，类成员name，类方法testParameterTransfer，初始name为<code>夜雨柠檬</code>，调用testParameterTransfer方法，将user对象传入，改变name的值为<code>NightRainLemon</code>，请分析结果，</p>
 <h5 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testParameterTransfer</span><span class="params">(User userCopy)</span> </span>&#123;</span><br><span class="line">        userCopy.name = <span class="string">"NightRainLemon"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        User user = <span class="keyword">new</span> User(<span class="string">"夜雨柠檬"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(user.name);</span><br><span class="line">        user.testParameterTransfer(user);</span><br><span class="line">        System.out.println(user.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h5><p><code>夜雨柠檬</code><br><code>NightRainLemon</code></p>
 <h5 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h5><div align="left"><img src="/images/User内存图解_10.32.png" style="margin-left:0px"></div>
@@ -365,10 +366,6 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/06/15/HelloWorld/" rel="next" title="HelloWorld">
-                <i class="fa fa-chevron-left"></i> HelloWorld
-              </a>
             
           </div>
 
@@ -464,7 +461,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
